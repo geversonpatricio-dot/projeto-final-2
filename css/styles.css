@@ -89,6 +89,11 @@ body.dark-mode .form-control {
     height: 100%;
     object-fit: cover;
 }
+
+#btnReset {
+    background-color: #e7e1e1d8;
+    color: #686969;
+}
 /* 
    
     Se a tela for pequena (tipo celular), eu mudo o tamanho de algumas coisas.
