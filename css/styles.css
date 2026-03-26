@@ -72,17 +72,20 @@ body.dark-mode .form-control {
     object-fit: cover;
 }
 
-.card-group
-{
-  display: flex;                /* Ativa o flexbox */
-  justify-content: center;      /* Centraliza horizontalmente */
-  align-items: center;          /* Centraliza verticalmente */
-  min-height: 100vh;            /* Opcional: faz o pai ocupar a altura total da tela */
+.card-group {
+    display: flex;
+    /* Ativa o flexbox */
+    justify-content: center;
+    /* Centraliza horizontalmente */
+    align-items: center;
+    /* Centraliza verticalmente */
+    min-height: 100vh;
+    /* Opcional: faz o pai ocupar a altura total da tela */
 }
 
 .navbar {
-            margin-bottom: 20px;
-        }
+    margin-bottom: 20px;
+}
 
 .card {
     width: 100%;
@@ -94,6 +97,11 @@ body.dark-mode .form-control {
     background-color: #e7e1e1d8;
     color: #686969;
 }
+
+.navbar {
+    margin-bottom: 20px;
+}
+
 /* 
    
     Se a tela for pequena (tipo celular), eu mudo o tamanho de algumas coisas.
@@ -102,6 +110,7 @@ body.dark-mode .form-control {
     h1 {
         font-size: 24px;
     }
+
     .portfolio-image img {
         max-width: 100%;
     }

@@ -152,7 +152,7 @@ async function buscarDadosAPI() {
         btnAPI.textContent = 'Carregando...';
 
         // Eu vou buscar uma piada aleatória nesse site aqui.
-        const resposta = await fetch('GET https://www.abibliadigital.com.br/api/verses/:version/random');
+        const resposta = await fetch('https://v2.jokeapi.dev/joke/Any?format=json');
         const dados = await resposta.json();
 
         let texto = '';
