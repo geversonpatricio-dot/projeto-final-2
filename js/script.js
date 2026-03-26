@@ -12,7 +12,7 @@ const fotosAlternativas = [
     'images/computador2.jpg'
 ];
 
-// Aqui eu guardo os hobbies iniciais que o professor pediu.
+//  Hobbies iniciais que o professor pediu.
 const hobbiesIniciais = ['Sql', 'Web', 'Gestão de Projecto'];
 
 // Aqui eu guardo o estado atual do site (se tá claro ou escuro, o nome, etc).
@@ -52,7 +52,7 @@ const areaAPI = document.getElementById('textoAPI');
 const txtContador = document.getElementById('contadorAtualizacoes');
 
 // --- 1. MUDAR O TEMA (CLARO/ESCURO) ---
-// Essa função coloca ou tira a classe 'dark-mode' do body do HTML.
+// Função coloca ou tira a classe 'dark-mode' do body do HTML.
 function aplicarTema(tema) {
     if (tema === 'escuro') {
         document.body.classList.add('dark-mode');
@@ -86,6 +86,7 @@ btnTrocarFoto.addEventListener('click', function() {
 
 // --- 3. ADICIONAR UM HOBBY ---
 // O prompt abre uma janelinha pro usuário escrever o que ele gosta.
+
 btnNovoHobby.addEventListener('click', function() {
     const hobby = prompt('O que você gosta de fazer?');
     
