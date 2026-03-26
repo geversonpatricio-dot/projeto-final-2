@@ -53,6 +53,7 @@ body.dark-mode .form-control {
     object-fit: cover;
 }
 
+
 /* 
     EFEITO DE HOVER:
     Quando o usuário passa o mouse em cima da imagem, ela aumenta um pouquinho.
@@ -71,8 +72,26 @@ body.dark-mode .form-control {
     object-fit: cover;
 }
 
+.card-group
+{
+  display: flex;                /* Ativa o flexbox */
+  justify-content: center;      /* Centraliza horizontalmente */
+  align-items: center;          /* Centraliza verticalmente */
+  min-height: 100vh;            /* Opcional: faz o pai ocupar a altura total da tela */
+}
+
+
+.navbar {
+            margin-bottom: 20px;
+        }
+
+.card {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 /* 
-    RESPONSIVIDADE:
+   
     Se a tela for pequena (tipo celular), eu mudo o tamanho de algumas coisas.
 */
 @media (max-width: 768px) {
