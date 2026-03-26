@@ -1,0 +1,85 @@
+/* 
+
+    Aqui é onde eu mudo a aparência do meu site.
+    Eu uso seletores (como body, h1, .classe) pra dizer o que eu quero mudar.
+*/
+
+body {
+    /* 
+        FONTE COMUM:
+        Eu usei Arial e Sans-serif porque são fontes que todo mundo tem.
+        Assim o site fica com uma cara mais simples e comum.
+    */
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 
+    MODO ESCURO:
+    Essa classe 'dark-mode' é colocada no body pelo JavaScript.
+    Quando ela tá lá, as cores mudam pra preto e cinza.
+*/
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode .card,
+body.dark-mode .bg-light,
+body.dark-mode .bg-white {
+    background-color: #1e1e1e !important;
+    color: #ffffff;
+    border-color: #333 !important;
+}
+
+body.dark-mode .form-control {
+    background-color: #2c2c2c;
+    color: #ffffff;
+    border-color: #444;
+}
+
+/* 
+    IMAGEM DE PERFIL:
+    Eu usei max-width pra ela não ficar gigante na tela.
+    O border-radius deixa as pontas arredondadas.
+*/
+.portfolio-image img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* 
+    EFEITO DE HOVER:
+    Quando o usuário passa o mouse em cima da imagem, ela aumenta um pouquinho.
+*/
+.portfolio-image img:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
+
+/* 
+    NOTÍCIAS:
+    Estilo simples para os cards de notícias.
+*/
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* 
+    RESPONSIVIDADE:
+    Se a tela for pequena (tipo celular), eu mudo o tamanho de algumas coisas.
+*/
+@media (max-width: 768px) {
+    h1 {
+        font-size: 24px;
+    }
+    .portfolio-image img {
+        max-width: 100%;
+    }
+}

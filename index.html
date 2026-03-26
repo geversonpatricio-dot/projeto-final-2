@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- 
+        O QUE É O HEAD?
+        Aqui ficam as configurações do site que ninguém vê, mas que são importantes.
+        Tipo o título da aba e os links para os estilos (CSS).
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEU SITE DE ESTUDANTE</title>
+    
+    <!-- 
+        BOOTSTRAP:
+        Isso aqui é uma biblioteca de estilos pronta. Eu uso pra não ter que criar
+        todos os botões e colunas do zero. É só colocar esse link aqui.
+    -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- MEU CSS: Onde eu mudo as cores e fontes do meu jeito -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        /* Estilo simples para a navegação fixa no topo */
+        .navbar {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body id="Top">
+
+    <!-- 
+        BARRA DE NAVEGAÇÃO:
+        Serve para o usuário clicar e ir direto para uma parte do site.
+        O href="#conteudoAPI" faz a página pular lá pra baixo.
+    -->
+    <nav class="navbar navbar-expand-lg bg-light border-bottom">
+        <div class="container">
+            <a class="navbar-brand" href="#">MEU SITE</a>
+            <div class="navbar-nav">
+                <a class="nav-link" href="#conteudoAPI">IR PARA INSPIRAÇÃO</a>
+                <a class="nav-link" href="#noticias">NOTÍCIAS TECH</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-4">
+
+        <!-- SEÇÃO PRINCIPAL: Dividida em duas colunas (row e col) -->
+        <section class="main-content">
+            <div class="row">
+                
+                <!-- COLUNA DA ESQUERDA: Perfil e Hobbies -->
+                <div class="col-md-6">
+                    <h1 id="nomePerfil">Meu Portfólio</h1>
+                    <p id="frasePerfil" class="text-muted">Sou estudante de Programação Low Code...</p>
+
+                    <!-- FOTO DE PERFIL: O ID serve pro JavaScript achar essa imagem depois -->
+                    <div class="portfolio-image mb-4">
+                        <img id="fotoPerfil" src="images/escritorio1.jpg" alt="Minha Foto" class="img-fluid rounded shadow">
+                    </div>
+
+                    <!-- LISTA DE HOBBIES: Onde eu coloco o que eu gosto -->
+                    <div id="areaHobbies" class="p-3 mb-4 border rounded bg-light">
+                        <h3>Meus Hobbies:</h3>
+                        <ul id="listaHobbies" class="list-group list-group-flush">
+                            <li class="list-group-item">Sql</li>
+                            <li class="list-group-item">Web</li>
+                            <li class="list-group-item">Gestão de Projecto</li>
+                        </ul>
+                    </div>
+
+                    <!-- BOTÕES DE AÇÃO: Cada um faz uma coisa diferente no JS -->
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-outline-dark" id="btnTema">Mudar para Modo Escuro</button>
+                        <button class="btn btn-outline-primary" id="btnTrocarImagem">Trocar a Imagem</button>
+                        <button class="btn btn-outline-success" id="btnAdicionarHobby">Adicionar Novo Hobby</button>
+                    </div>
+                </div>
+
+                <!-- COLUNA DA DIREITA: Formulário de Personalização -->
+                <div class="col-md-6">
+                    <div id="cardPerfil" class="p-4 border rounded shadow-sm bg-white">
+                        <h3>Personalizar Site</h3>
+                        <p>Mude as informações abaixo:</p>
+
+                        <form id="formPerfil">
+                            <div class="mb-3">
+                                <label class="form-label">Seu Nome:</label>
+                                <input type="text" class="form-control" id="inputNome" placeholder="Digite aqui...">
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Frase de Efeito:</label>
+                                <textarea class="form-control" id="inputFrase" rows="2"></textarea>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Cor da Borda:</label>
+                                <input type="color" class="form-control form-control-color" id="inputCor" value="#000000">
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Link de uma Foto (URL):</label>
+                                <input type="url" class="form-control" id="inputFoto" placeholder="http://...">
+                            </div>
+
+                            <button type="submit" class="btn btn-dark w-100">ATUALIZAR PERFIL</button>
+                        </form>
+
+                        <p class="mt-3 text-center small text-secondary">
+                            Atualizado <strong id="contadorAtualizacoes">0</strong> vezes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO DE INSPIRAÇÃO: Onde a API vai colocar o texto -->
+        <section id="conteudoAPI" class="mt-5 pt-5 border-top">
+            <h2>Inspiração do Dia</h2>
+            <div class="card mt-3">
+                <div class="card-body text-center">
+                    <div id="textoAPI" class="mb-3 p-3 bg-light rounded">
+                        <p>Clique no botão para carregar uma piada ou frase...</p>
+                    </div>
+                    <button class="btn btn-info text-white" id="btnCarregarAPI">BUSCAR INSPIRAÇÃO</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO DE NOTÍCIAS: Copiada do original com cards do Bootstrap -->
+        <section id="noticias" class="mt-5 pt-5 border-top">
+            <h2 class="text-center mb-4">Últimas Notícias de Tecnologia</h2>
+            <div class="row g-4">
+                
+                <!-- Notícia 1 -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="https://www.overclockers.ua/content/news/other/49356-jensen-huang-nvidia.jpg" class="card-img-top" alt="IA">
+                        <div class="card-body">
+                            <h5 class="card-title">IA Atinge Nível Humano</h5>
+                            <p class="card-text">O CEO da Nvidia afirma que a IA já alcançou o nível humano em tarefas complexas.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-sm btn-primary">Ler mais</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notícia 2 -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="https://clickpetroleoegas.com.br/wp-content/uploads/2026/02/Design-sem-nome-8-15-1095x730.jpg" class="card-img-top" alt="Desertos">
+                        <div class="card-body">
+                            <h5 class="card-title">Muralhas Verdes</h5>
+                            <p class="card-text">Projetos na China e África transformam desertos em áreas produtivas.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-sm btn-primary">Ler mais</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notícia 3 -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Tesla-Bot-AI.jpg" class="card-img-top" alt="Robôs">
+                        <div class="card-body">
+                            <h5 class="card-title">Tesla Optimus Gen 2</h5>
+                            <p class="card-text">Nova geração do robô da Tesla demonstra destreza impressionante.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-sm btn-primary">Ler mais</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- BOTÕES DE RESET E COR -->
+        <section class="mt-5 mb-5 pt-5 border-top text-center">
+            <button class="btn btn-secondary me-2" id="btnCorAleatoria">Cor Aleatória</button>
+            <button class="btn btn-danger" id="btnReset">RESETAR TUDO</button>
+            
+            <div class="mt-4">
+                <a href="#Top" class="text-decoration-none">↑ VOLTAR AO INÍCIO</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- SCRIPTS: O JavaScript que faz tudo funcionar -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>
